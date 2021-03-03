@@ -9,3 +9,15 @@ This code is  based on a Python program by Joe Strout, Jeff Epler and Jez Higgin
 The original code is available [here](https://github.com/jezhiggins/eliza.py).
 
 You can learn more about Eliza on [Wikipedia](https://en.wikipedia.org/wiki/ELIZA).
+
+To run this program on a Mac, change to the directory where the code is, and type:
+
+~~~
+go run *.go
+~~~
+
+On Windows, type:
+
+~~~
+go run .
+~~~
