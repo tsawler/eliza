@@ -29,7 +29,7 @@ func main() {
 			// end program
 			break
 		} else {
-			// go buld the response and write it to the console
+			// go build the response and write it to the console
 			resp := fmt.Sprintf("%s%s%s", "\033[1m", Response(userInput), "\033[0m")
 			fmt.Println(resp)
 		}
