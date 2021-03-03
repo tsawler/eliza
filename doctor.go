@@ -60,8 +60,11 @@ var reflections = map[string]string{
 	"am":     "are",
 	"was":    "were",
 	"I":      "you",
+	"i":      "you",
 	"I'd":    "you would",
+	"i'd":    "you would",
 	"I'll":   "you will",
+	"i'll":   "you will",
 	"my":     "your",
 	"are":    "am",
 	"you've": "I have",
@@ -69,6 +72,7 @@ var reflections = map[string]string{
 	"yours":  "mine",
 	"you":    "me",
 	"I'm":    "your",
+	"i'm":    "your",
 }
 
 var responses = [][]string{
@@ -144,21 +148,18 @@ func Response(userInput string) string {
 	// strip out punctuation from user input
 	userInput = reg.ReplaceAllString(userInput, " ")
 
-	// now convert the input to lower case letters
-	var input = strings.ToLower(userInput)
-
 	// Loop through the matches list. If there's a match, strip it out and replace with the response.
 	// If the response contains %1, replace that with the remainder of the input string.
 	// Before replacing, change words in the Remainder of the input with the corresponding entry from the
 	// reflections map.
 	for i := 0; i < len(matches); i++ {
 		match := matches[i]
-		position := strings.Index(input, match)
+		position := strings.Index(strings.ToLower(userInput), match)
 
 		if position > -1 {
 			// we found the word in matches in the user input string, so now we need to
 			// figure out how much to delete that input.
-			tmp := input[position+len(match):]
+			tmp := strings.ToLower(userInput)[position+len(match):]
 			tmp = strings.Trim(tmp, " ")
 			exploded := strings.Split(tmp, " ")
 
