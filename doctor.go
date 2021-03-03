@@ -138,8 +138,7 @@ func Response(userInput string) string {
 	// seed the random number generator.
 	rand.Seed(time.Now().UnixNano())
 
-	// Sanitize user input by removing punctuation. First, set up a regular expression to strip out punctuation.
-	// from user input
+	// Sanitize user input by setting up a regular expression to strip out punctuation from user input.
 	reg, err := regexp.Compile("[^a-zA-Z0-9]+")
 	if err != nil {
 		log.Fatal(err)
