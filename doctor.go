@@ -148,9 +148,7 @@ func Response(userInput string) string {
 	userInput = reg.ReplaceAllString(userInput, " ")
 
 	// Loop through the matches list. If there's a match, strip it out and replace with the response.
-	// If the response contains %1, replace that with the remainder of the input string.
-	// Before replacing, change words in the Remainder of the input with the corresponding entry from the
-	// reflections map.
+	// Change words in the Remainder of the input with the corresponding entry from the reflections map.
 	for i := 0; i < len(matches); i++ {
 		match := matches[i]
 		position := strings.Index(strings.ToLower(userInput), match)
@@ -195,7 +193,8 @@ func Response(userInput string) string {
 		output = responses[len(responses)-1][randomIndex]
 	}
 
-	// build our final response and send it back.
+	// Build our final response and send it back. If the response contains %1, replace that with the remainder
+	// of the input string.
 	output = strings.ReplaceAll(output, "%1", remainder)
 
 	return output
