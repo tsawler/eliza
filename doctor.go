@@ -130,16 +130,16 @@ and lower-case letters and punctuation.  Enter 'quit' when done.
 Hello. How are you feeling today?`
 }
 
-// Response builds a response based on input and sends back string
+// Response builds a response based on input and sends back string.
 func Response(userInput string) string {
-	// declare the two strings we need for output
+	// declare the two strings we need for output.
 	var output, remainder string
 
-	// seed the random number generator
+	// seed the random number generator.
 	rand.Seed(time.Now().UnixNano())
 
-	// Sanitize user input by removing punctuation and changing to lower case
-	// First, set up a regular expression to strip out punctuation from user input
+	// Sanitize user input by removing punctuation. First, set up a regular expression to strip out punctuation.
+	// from user input
 	reg, err := regexp.Compile("[^a-zA-Z0-9]+")
 	if err != nil {
 		log.Fatal(err)
