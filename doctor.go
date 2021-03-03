@@ -55,6 +55,7 @@ var matches = []string{
 	"hey",
 	"quit",
 }
+
 var reflections = map[string]string{
 	"am":     "are",
 	"was":    "were",
