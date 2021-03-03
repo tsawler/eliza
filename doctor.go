@@ -177,7 +177,7 @@ func Response(userInput string) string {
 				}
 			}
 
-			// turn the slice of words in exploded into a sentence, and strip off extra spaces from beginning/end.
+			// turn the slice of words in exploded into a single string, and strip off extra spaces from beginning/end.
 			remainder = strings.Join(exploded, " ")
 			remainder = strings.Trim(remainder, " ")
 
