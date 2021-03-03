@@ -12,7 +12,7 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 
 	// print the welcome message and instructions to the screen
-	fmt.Println(fmt.Sprintf("%s %s %s", "\033[1m", Intro(), "\033[0m"))
+	fmt.Println(Intro())
 
 	// execute everything in this loop until the user enters 'quit'
 	for {
@@ -30,8 +30,7 @@ func main() {
 			break
 		} else {
 			// go build the response and write it to the console
-			resp := fmt.Sprintf("%s%s%s", "\033[1m", Response(userInput), "\033[0m")
-			fmt.Println(resp)
+			fmt.Println(Response(userInput))
 		}
 	}
 }
