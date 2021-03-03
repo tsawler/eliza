@@ -13,15 +13,16 @@ You can learn more about Eliza on [Wikipedia](https://en.wikipedia.org/wiki/ELIZ
 
 ## Running the code
 
-First, you have to install Go.
+First, you have to [install Go](https://golang.org/dl/). Any version after 1.9 should suffice.
 
-To run this program on a Mac, change to the directory where the code is, and type:
+Once you have that step out of the way, to run this program on a Mac, change to the directory where 
+the code is, and type:
 
 ~~~
 go run *.go
 ~~~
 
-On Windows, type:
+On Windows, go to the directory where this code lives, and type:
 
 ~~~
 go run .
