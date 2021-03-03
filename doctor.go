@@ -59,11 +59,8 @@ var matches = []string{
 var reflections = map[string]string{
 	"am":     "are",
 	"was":    "were",
-	"I":      "you",
 	"i":      "you",
-	"I'd":    "you would",
 	"i'd":    "you would",
-	"I'll":   "you will",
 	"i'll":   "you will",
 	"my":     "your",
 	"are":    "am",
@@ -71,7 +68,6 @@ var reflections = map[string]string{
 	"your":   "my",
 	"yours":  "mine",
 	"you":    "me",
-	"I'm":    "your",
 	"i'm":    "your",
 }
 
@@ -165,7 +161,7 @@ func Response(userInput string) string {
 			// appropriate for our response.
 			for index, word := range exploded {
 				for key, value := range reflections {
-					if key == word {
+					if strings.ToLower(key) == strings.ToLower(word) {
 						// we found one, so swap the old value for the one
 						// from our reflections map and break out of this loop.
 						exploded[index] = value
