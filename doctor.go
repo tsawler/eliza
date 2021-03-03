@@ -126,7 +126,6 @@ and lower-case letters and punctuation.  Enter 'quit' when done.
 
 Hello. How are you feeling today?
 `
-
 }
 
 // Response builds a response based on input and sends back string
