@@ -158,25 +158,26 @@ func Response(userInput string) string {
 
 		if position > -1 {
 			// we found the word in matches in the user input string, so now we need to
-			// figure out how much to delete that input
+			// figure out how much to delete that input.
 			tmp := input[position+len(match):]
 			tmp = strings.Trim(tmp, " ")
 			exploded := strings.Split(tmp, " ")
 
 			// loop through slice of words in our exploded variable, looking for one that
-			// matches the key in the reflections map
+			// matches the key in the reflections map. This will change pronouns and verbs into words
+			// appropriate for our response.
 			for index, word := range exploded {
 				for key, value := range reflections {
 					if key == word {
 						// we found one, so swap the old value for the one
-						// from our reflections map and break out of this loop
+						// from our reflections map and break out of this loop.
 						exploded[index] = value
 						break
 					}
 				}
 			}
 
-			// turn the slice of words in exploded into a sentence, and strip off extra spaces from beginning/end
+			// turn the slice of words in exploded into a sentence, and strip off extra spaces from beginning/end.
 			remainder = strings.Join(exploded, " ")
 			remainder = strings.Trim(remainder, " ")
 
@@ -195,7 +196,7 @@ func Response(userInput string) string {
 		output = responses[len(responses)-1][randomIndex]
 	}
 
-	// build our final response
+	// build our final response and send it back.
 	output = strings.ReplaceAll(output, "%1", remainder)
 
 	return output
