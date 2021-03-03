@@ -8,12 +8,10 @@ import (
 	"time"
 )
 
-// A port of the original  "Eliza" program to Go.
-// The program appears to have a conversation with the user, using string replacement
-// and basic parsing, to give the appearance of understanding what the user types.
-// The responses are based on a Python program by Joe Strout, Jeff Epler and Jez Higgins.
-// Original available at https://github.com/jezhiggins/eliza.py
-// Licensed under the terms of the MIT License.
+// A port of the original  "Eliza" program to Go. The program appears to have a conversation with the user, using
+// string replacement and basic parsing, to give the appearance of understanding what the user types. The responses
+// are based on a Python program by Joe Strout, Jeff Epler and Jez Higgins. The Python code is available at
+// https://github.com/jezhiggins/eliza.py. This code is licensed under the terms of the MIT License.
 
 var matches = []string{
 	"life",
