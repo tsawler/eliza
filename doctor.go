@@ -143,8 +143,8 @@ func Response(userInput string) string {
 	// strip out punctuation from user input
 	userInput = reg.ReplaceAllString(userInput, " ")
 
-	// Loop through the matches list. If there's a match, strip it out and replace with the response.
-	// Change words in the Remainder of the input with the corresponding entry from the reflections map.
+	// Loop through the matches list. If there's a match, strip it out. Change words in the remainder (if any)
+	// of the input with the corresponding entry from the reflections map.
 	for i := 0; i < len(matches); i++ {
 		match := matches[i]
 		position := strings.Index(strings.ToLower(userInput), match)
