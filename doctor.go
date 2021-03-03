@@ -15,14 +15,6 @@ import (
 // Original available at https://github.com/jezhiggins/eliza.py
 // Licensed under the terms of the MIT License.
 
-import (
-	"log"
-	"math/rand"
-	"regexp"
-	"strings"
-	"time"
-)
-
 var matches = []string{
 	"life",
 	"i need",
