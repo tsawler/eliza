@@ -13,7 +13,7 @@ You can learn more about Eliza on [Wikipedia](https://en.wikipedia.org/wiki/ELIZ
 
 ## Running the code
 
-First, you have to [install Go](https://golang.org/dl/). Any version after 1.9 should suffice.
+First, you have to [install Go](https://golang.org/dl/). 
 
 Once you have that step out of the way, to run this program on a Mac, change to the directory where 
 the code is, and type:

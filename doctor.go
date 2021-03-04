@@ -126,15 +126,15 @@ and lower-case letters and punctuation.  Enter 'quit' when done.
 Hello. How are you feeling today?`
 }
 
-// Response builds a response based on input and sends back string.
+// Response builds a response based on input and sends back string
 func Response(userInput string) string {
-	// declare the two strings we need for output.
+	// declare the two strings we need for output
 	var output, remainder string
 
 	// seed the random number generator.
 	rand.Seed(time.Now().UnixNano())
 
-	// Sanitize user input by setting up a regular expression to strip out punctuation from user input.
+	// Sanitize user input by setting up a regular expression to strip out punctuation
 	reg, err := regexp.Compile("[^a-zA-Z0-9]+")
 	if err != nil {
 		log.Fatal(err)
@@ -144,14 +144,14 @@ func Response(userInput string) string {
 	userInput = reg.ReplaceAllString(userInput, " ")
 
 	// Loop through the matches list. If there's a match, strip it out. Change words in the remainder (if any)
-	// of the input with the corresponding entry from the reflections map.
+	// of the input with the corresponding entry from the reflections map
 	for i := 0; i < len(matches); i++ {
 		match := matches[i]
 		position := strings.Index(strings.ToLower(userInput), match)
 
 		if position > -1 {
 			// we found the word in matches in the user input string, so now we need to
-			// figure out how much to delete that input.
+			// figure out how much to delete that input
 			tmp := strings.ToLower(userInput)[position+len(match):]
 			tmp = strings.Trim(tmp, " ")
 			exploded := strings.Split(tmp, " ")
@@ -170,7 +170,7 @@ func Response(userInput string) string {
 				}
 			}
 
-			// turn the slice of words into a single string, and strip off extra spaces from beginning/end.
+			// turn the slice of words into a single string, and strip off extra spaces from beginning/end
 			remainder = strings.Join(exploded, " ")
 			remainder = strings.Trim(remainder, " ")
 
