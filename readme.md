@@ -10,13 +10,7 @@ You can learn more about Eliza on [Wikipedia](https://en.wikipedia.org/wiki/ELIZ
 
 ## Running the code
 
-To run this program on a Mac, change to the directory where the code is, and type:
-
-~~~
-go run *.go
-~~~
-
-On Windows, go to the directory where this code lives, and type:
+To run this program go to the directory where this code lives, and type:
 
 ~~~
 go run .
